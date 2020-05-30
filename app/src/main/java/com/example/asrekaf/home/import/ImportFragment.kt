@@ -62,6 +62,6 @@ class ImportFragment : Fragment() {
     }
 
     companion object {
-        const val TITLE = "Import Api Key"
+        const val TITLE = "Import API Key"
     }
 }

@@ -14,6 +14,7 @@
 
     <style name="CodeInput" parent="Widget.MaterialComponents.TextInputLayout.OutlinedBox">
         <item name="android:hint">@string/code</item>
+        <item name="android:color">@color/textWhite</item>
     </style>
 
     <style name="Button">
@@ -30,6 +31,10 @@
         <item name="textAllCaps">true</item>
         <item name="android:textStyle">bold</item>
         <item name="android:textColor">?android:attr/textColorPrimary</item>
+    </style>
+
+    <style name="LoginTextInputLayoutStyle" parent="Widget.MaterialComponents.TextInputLayout.OutlinedBox.Dense">
+        <item name="boxStrokeColor">@color/textWhite</item>
     </style>
 
 </resources>

@@ -1,11 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
-<resources>
-    <color name="colorPrimary">#23008E</color>
-    <color name="colorPrimaryDark">#23008E</color>
-    <color name="colorAccent">#03DAC5</color>
-    <color name="loginPageBackgroundColor">#FFFFFF</color>
+<resources xmlns:tools="http://schemas.android.com/tools">
+    <color name="headerBlack">#232b2b</color>
+    <color name="backgroundBlack">#414a4c</color>
     <color name="asrekafOrange">#CC5C00</color>
-    <color name="restoPassGreen">#00b686</color>
-    <color name="backgroundPrimary">#fff8e1</color>
-    <color name="cancel">#d11a2a</color>
+    <color name="textWhite">#FFFFFF</color>
 </resources>
