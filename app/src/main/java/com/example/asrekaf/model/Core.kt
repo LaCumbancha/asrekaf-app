@@ -16,7 +16,7 @@ object Core {
     fun generateToken(code: String): String {
         val dateTime = LocalDateTime.now()
         val key = dateTime.format(DateTimeFormatter.ofPattern(tokenTimePattern))
-        return Hasher.hash(code + key, HashType.MD5).toUpperCase().substring(0, 8)
+        return Hasher.hash(code + apiKey + key, HashType.MD5).toUpperCase().substring(0, 8)
     }
 
 }
