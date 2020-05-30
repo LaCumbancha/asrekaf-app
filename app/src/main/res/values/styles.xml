@@ -1,0 +1,35 @@
+<resources xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <!-- Base application theme. -->
+    <style name="AppTheme" parent="Theme.MaterialComponents.Light.NoActionBar">
+        <!-- Customize your theme here. -->
+<!--        <item name="colorPrimary">@color/colorPrimary</item>-->
+<!--        <item name="colorPrimaryDark">@color/colorPrimaryDark</item>-->
+<!--        <item name="colorAccent">@color/colorAccent</item>-->
+    </style>
+
+    <style name="ApiKeyInput" parent="Widget.MaterialComponents.TextInputLayout.OutlinedBox">
+        <item name="android:hint">@string/api_key_hint</item>
+    </style>
+
+    <style name="CodeInput" parent="Widget.MaterialComponents.TextInputLayout.OutlinedBox">
+        <item name="android:hint">@string/code</item>
+    </style>
+
+    <style name="Button">
+        <item name="android:layout_width">match_parent</item>
+        <item name="android:layout_height">wrap_content</item>
+        <item name="android:layout_marginTop">15dp</item>
+        <item name="android:paddingTop">13dp</item>
+        <item name="android:paddingBottom">13dp</item>
+        <item name="android:textSize">15sp</item>
+        <item name="backgroundTint">@color/asrekafOrange</item>
+    </style>
+
+    <style name="TextAppearance.Label" parent="TextAppearance.MaterialComponents.Body2">
+        <item name="textAllCaps">true</item>
+        <item name="android:textStyle">bold</item>
+        <item name="android:textColor">?android:attr/textColorPrimary</item>
+    </style>
+
+</resources>

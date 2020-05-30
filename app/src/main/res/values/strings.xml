@@ -1,0 +1,15 @@
+<resources>
+    <string name="app_name">Asrekaf</string>
+
+    <!-- GenerateTokenFragment -->
+    <string name="generate_token">Generate token</string>
+    <string name="code">Code</string>
+    <string name="welcome">Welcome</string>
+    <string name="import_key_button">Import token</string>
+
+    <!-- ImportKey -->
+    <string name="api_key">Key</string>
+    <string name="api_key_hint">Insert your key</string>
+    <string name="import_button">Import</string>
+
+</resources>
