@@ -6,14 +6,15 @@ import androidx.appcompat.app.AppCompatActivity
 import androidx.fragment.app.Fragment
 import com.example.asrekaf.R
 import com.example.asrekaf.home.import.ImportFragment
+import com.example.asrekaf.home.token.TokenFragment
 import kotlinx.android.synthetic.main.activity_home.*
 import timber.log.Timber
-
 
 class HomeActivity :
     AppCompatActivity(),
     HomeFragment.OnFragmentInteractionListener,
-    ImportFragment.OnFragmentInteractionListener {
+    ImportFragment.OnFragmentInteractionListener,
+    TokenFragment.OnFragmentInteractionListener {
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -38,10 +39,6 @@ class HomeActivity :
 
     override fun changeToolbar(fragmentName: String) {
         toolbar.title = fragmentName
-    }
-
-    override fun showToken(token: String) {
-        TODO("not implemented") //To change body of created functions use File | Settings | File Templates.
     }
 
     override fun backToHome() {

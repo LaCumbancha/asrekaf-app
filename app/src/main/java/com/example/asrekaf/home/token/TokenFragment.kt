@@ -1,55 +1,40 @@
-package com.example.asrekaf.home
+package com.example.asrekaf.home.token
 
 import android.content.Context
-import android.os.Build
 import android.os.Bundle
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
-import androidx.annotation.RequiresApi
 import androidx.databinding.DataBindingUtil
 import androidx.fragment.app.Fragment
 import androidx.lifecycle.ViewModelProvider
 import com.example.asrekaf.R
-import com.example.asrekaf.databinding.FragmentHomeBinding
-import com.example.asrekaf.home.import.ImportFragment
-import com.example.asrekaf.home.model.HomeViewModel
-import com.example.asrekaf.home.token.TokenFragment
-import com.example.asrekaf.model.Core
-import kotlinx.android.synthetic.main.fragment_home.*
+import com.example.asrekaf.databinding.FragmentTokenBinding
 
-class HomeFragment : Fragment() {
+import com.example.asrekaf.home.model.TokenViewModel
+
+class TokenFragment(private val token: String) : Fragment() {
 
     private var listener: OnFragmentInteractionListener? = null
-    private lateinit var viewModel: HomeViewModel
-    private lateinit var binding: FragmentHomeBinding
+    private lateinit var viewModel: TokenViewModel
+    private lateinit var binding: FragmentTokenBinding
 
     override fun onCreateView(
         inflater: LayoutInflater,
         container: ViewGroup?,
         savedInstanceState: Bundle?
     ): View? {
+        binding = DataBindingUtil.inflate(inflater, R.layout.fragment_token, container, false)
+        viewModel = ViewModelProvider(requireActivity()).get(TokenViewModel::class.java)
 
-        binding = DataBindingUtil.inflate(inflater, R.layout.fragment_home, container, false)
-        viewModel = ViewModelProvider(requireActivity()).get(HomeViewModel::class.java)
-
-        binding.homeViewModel = viewModel
+        viewModel.token = token
+        binding.tokenViewModel = viewModel
         return binding.root
     }
 
-    @RequiresApi(Build.VERSION_CODES.O)
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
         listener?.changeToolbar(TITLE)
-
-        generateTokenButton.setOnClickListener {
-            val token = Core.generateToken(viewModel.code)
-            listener?.showFragment(TokenFragment(token))
-        }
-
-        importButton.setOnClickListener {
-            listener?.showFragment(ImportFragment())
-        }
     }
 
     override fun onAttach(context: Context) {
@@ -67,11 +52,10 @@ class HomeFragment : Fragment() {
     }
 
     interface OnFragmentInteractionListener {
-        fun showFragment(fragment: Fragment)
         fun changeToolbar(fragmentName: String)
     }
 
     companion object {
-        const val TITLE = "Asrekaf"
+        const val TITLE = "Token"
     }
 }
